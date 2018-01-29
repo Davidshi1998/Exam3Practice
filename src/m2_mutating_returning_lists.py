@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  MUTATING  and  RETURNING-NEW  LISTS.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and David Shi.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -83,6 +83,27 @@ def run_test_doubler():
     # TO DO 2 (continued): Add your ADDITIONAL test(s) here:
     # ------------------------------------------------------------------
 
+    # Test 2:
+    arg3 = [1, 2, 3, 4]
+    arg4 = [5, 6, 7]
+    correct_arg3_after = [2, 4, 6, 8]
+    correct_arg4_after = [5, 6, 7]
+    expected = [10, 12, 14]
+
+    print()
+    print('BEFORE the function call:')
+    print('  Argument 1 is:', arg3)
+    print('  Argument 2 is:', arg4)
+
+    answer = doubler(arg3, arg4)
+
+    print('AFTER the function call:')
+    print('  Argument 1 is:       ', arg3)
+    print('  Argument 1 should be:', correct_arg3_after)
+    print('  Argument 2 is:       ', arg4)
+    print('  Argument 2 should be:', correct_arg4_after)
+    print('The returned value is:       ', answer)
+    print('The returned value should be:', expected)
 
 def doubler(list1, list2):
     """
@@ -110,7 +131,12 @@ def doubler(list1, list2):
     #    DIFFICULTY:      4
     #    TIME ESTIMATE:   5 minutes.
     # ------------------------------------------------------------------
-
+    for k in range(len(list1)):
+        list1[k] = list1[k] * 2
+    newlist = []
+    for j in range(len(list2)):
+        newlist = newlist + [list2[j]*2]
+    return newlist
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
